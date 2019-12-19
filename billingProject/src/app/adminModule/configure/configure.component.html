@@ -1,0 +1,92 @@
+
+<div id="superr" class="container">
+<form [formGroup]="configureForm" class="form" (ngSubmit)="onConfig()">
+        <h1 style="text-align: center;font-family: verdana;color:#000080">Configure Here! </h1>
+    <div class="form-group">
+        <label>Project:</label>
+        <select class="custom-select" formControlName="projectId" ng-required="projectId" [class.is-invalid]="projectId.invalid && projectId.touched">
+           <option *ngFor="let pro of project" value={{pro.projectId}}>
+                {{pro.projectName}}</option>
+        </select>
+        <small class="text-danger" [class.d-none]="projectId.valid||projectId.untouched">This field is required..</small>
+    </div>
+
+    <div class="form-group">
+        <label>Role:</label>
+        <select class="custom-select" formControlName="roleId" ng-required="roleId" [class.is-invalid]="roleId.invalid && roleId.touched">
+          <option *ngFor="let ro of role" value={{ro.roleId}}>
+                {{ro.roleName}}
+              </option>
+             </select>
+             <small class="text-danger" [class.d-none]="roleId.valid||roleId.untouched">This field is required..</small>
+            </div>
+
+             <div class="form-group">
+                    <label>Location:</label>
+                    <div>
+                            <input id="offshore" type="radio" value="Offshore" name="location" formControlName="location" checked [class.is-invalid]="location.invalid && location.touched"/>
+                            <label for="offshore">Offshore</label>
+                         </div>
+                      
+                         <div>
+                            <input id="onshore" type="radio" value="Onsite" name="location" formControlName="location">
+                            <label for="onshore">Onshore</label>
+                         </div>
+                         <small class="text-danger" [class.d-none]="location.valid||location.untouched">This field is required..</small>
+             </div>
+
+             <div class="form-group">
+
+                    <label>Per Hour Billing  : </label>
+                    <div>
+                     <input type="number" name="perHourBilling" formControlName="perHourBilling" placeholder="Enter Per Hour Billing" [class.is-invalid]="perHourBilling.invalid && perHourBilling.touched" required="required"/>
+                    </div>
+                    <small class="text-danger" [class.d-none]="perHourBilling.valid||perHourBilling.untouched">This field is required..</small>
+                    </div>
+
+                    <div align="center">
+        <button type="submit" class="btn btn-success" [disabled]="!configureForm.valid">Submit</button>
+        </div>
+     </form>
+    </div>
+
+    <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th>
+                  Configuration Id
+                </th>
+                <th>
+                  Project name
+                </th>
+                <th>
+                  Role Name
+                </th>
+                <th>
+                  Location
+                </th>
+                <th>
+                  Per hour billing($)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let proj of pcObj">
+                <td>
+                  {{proj.configurationId}}
+                </td>
+                <td>
+                  {{proj.projectObj.projectName}}
+                </td>
+                <td>
+                  {{proj.roleObj.roleName}}
+                </td>
+                <td>
+                  {{proj.location}}
+                </td>
+                <td>
+                  {{proj.perHourBilling}}
+                </td>
+              </tr>
+            </tbody>
+          </table>

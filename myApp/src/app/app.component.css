@@ -1,0 +1,11 @@
+div{
+    font-family: cursive;
+    font-weight: 100;
+    color:red;
+}
+table{
+    background-origin: padding-box;
+    background-color:lightcyan;
+    border-color:blue;
+    border-radius:4.5%;
+}

@@ -1,0 +1,20 @@
+<h3>EMPLOYEE DETAILS</h3>
+<table class ="table table-primary">
+    <thead>
+        <tr>
+            <th> Id</th>
+            <th> Name</th>
+            <th> Gender</th>
+            <th> Designation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let obj of employees">
+            <td>{{obj.eId}}</td>
+            <td>{{obj.eNname}}</td>
+            <td>{{obj.eGender}}</td>
+            <td>{{obj.eDesig}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

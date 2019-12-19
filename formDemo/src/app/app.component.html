@@ -1,0 +1,95 @@
+ <!--<div class="container-fluid">
+  <h1>Register Employee</h1>
+ <form #employeeForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="empObj.eName"
+      #name="ngModel" required [class.is-invalid]="name.invalid && name.touched"/>
+      <small class="text-danger" [class.d-none]="name.valid||name.untouched">Name is required..</small>
+</div> 
+
+<div class="form-group">
+  <label>Age:</label>
+  <input type="text" class="form-control" name="age" [(ngModel)]="empObj.age"
+  #age="ngModel" required pattern="^\d{2}$" [class.is-invalid]="age.invalid && age.touched"/>
+  <small class="text-danger" [class.d-none]="age.valid||age.untouched">Age must be in digits..</small>
+</div>
+<div class="form-group">
+  <label>Password:</label>
+  <input type="password" class="form-control" name="pass" [(ngModel)]="empObj.ePassword"
+  #pass="ngModel" required [class.is-invalid]="pass.invalid && pass.touched"/>
+  <small class="text-danger" [class.d-none]="pass.valid||pass.untouched">Password is required..</small>
+</div>
+
+<div class="form-group">
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" class="custom-control-input" id="customRadio" name="gender" [(ngModel)]="empObj.eGender" #gender="ngModel" required value="M">
+  <label class="custom-control-label" for="customRadio">Male</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" class="custom-control-input" id="customRadio2" name="gender" [(ngModel)]="empObj.eGender" required value="F">
+  <label class="custom-control-label" for="customRadio2">Female</label><br/>
+</div>
+<small class="text-danger" [class.d-none]="!gender.errors||gender.untouched">
+  Please select Gender!..
+</small>
+</div>
+
+<div class="form-group">
+    <label>Select Desig:</label>
+<select name="desig" [(ngModel)]="empObj.eDesig" class="form-control">
+  <option selected>Select Menu</option>
+  <option value="manager">manager</option>
+  <option value="developer">Developer</option>
+  <option value="tech lead">Tech Lead</option>
+</select>
+</div>
+<div align="center">
+<button type="submit" class="btn btn-success" [disabled]="!employeeForm.form.valid">Submit</button></div>
+</form>-->
+<div class="container-fluid">
+  <h1>Register Employee</h1>
+<form [formGroup]="registerform" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" formControlName="eName" [class.is-invalid]="eName.invalid && eName.touched"/>
+    <small class="text-danger" [class.d-none]="eName.valid||eName.untouched">Name is required..</small>
+</div> 
+
+<div class="form-group">
+  <label>Age:</label>
+  <input type="text" class="form-control" formControlName="eAge" [class.is-invalid]="eAge.invalid && eAge.touched"/>
+  <small class="text-danger" [class.d-none]="eAge.valid||eAge.untouched">Age must be in digits..</small>
+</div>
+
+<div class="form-group">
+  <label>Password:</label>
+  <input type="password" class="form-control" formControlName="ePassword" [class.is-invalid]="ePassword.invalid && ePassword.touched"/>
+  <small class="text-danger" [class.d-none]="ePassword.valid||ePassword.untouched">Password is required..</small>
+</div>
+
+<div class="form-group">
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" class="custom-control-input" formControlName="eGender" id="customRadio">
+    <label class="custom-control-label" for="customRadio">Male</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" class="custom-control-input" id="customRadio2"  >
+    <label class="custom-control-label" for="customRadio2">Female</label><br/>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label>Select Desig:</label>
+<select formControlName="eDesig" class="form-control">
+  <option selected>Select Menu</option>
+  <option value="manager">manager</option>
+  <option value="developer">Developer</option>
+  <option value="tech lead">Tech Lead</option>
+</select>
+</div>
+
+<div align="center">
+  <button type="submit" class="btn btn-success" [disabled]="!registerform.form.valid">Submit</button></div>
+</form>
+</div>

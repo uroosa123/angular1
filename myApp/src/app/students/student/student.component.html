@@ -1,0 +1,62 @@
+
+
+      <!--<ul *ngFor="let p of cityList">
+           <li>
+               {{p.city}}
+            
+            <ul *ngFor="let s of p.student">
+                <li>{{s.studentId}}
+                {{s.studentName}}</li>
+            </ul>
+        </li>
+
+       </ul>--> 
+
+      <!-- <input type="text" [(ngModel)]="userName">
+       <br/>
+       <h3>Welcome :{{userName}}</h3>
+
+       <p>Hey!This is {{userName}}.Welcome to the world of Angular!</p>
+
+<button class="btn btn-primary" [disabled]="userName === ''"(click)="ClearText()">Reset User</button>
+
+<button (click) = toggle()>DisplayDetails</button>
+<p *ngIf="!isShow">This is a paragraph that needs to be toggled on click of the button given below!</p>
+
+<button (click)="clickMe()">Click</button>
+    <br/> <p *ngFor="let c of msg">
+        <li [ngStyle]="c>='5'?{'background-color':'blue','color':'white'} : {'background-color': 'white'}">{{c}}</li>
+    </p>
+
+    <p>Welcome {{userName|reverse:userName}}</p>
+
+    <input type="text" [(ngModel)]="filterGender"/>
+    <br/>
+    <h1>Users List</h1>
+    <table border='1'>
+      <tr>
+        <th>User Name</th>
+        <th>Gender</th>
+        <th>Desig</th>
+      </tr>
+      <tr *ngFor="let userObj of usersList|filter:filterGender">
+            <td>{{userObj.name}}</td>
+            <td>{{userObj.gender}}</td>
+            <td>{{userObj.desig}}</td>
+            </tr>
+    </table>-->
+    <input type="number" [(ngModel)]="x"/>
+    <input type="number" [(ngModel)]="y"/>
+    <table>
+        <tr>
+        <td>Super Boost Power</td>
+        <td>{{x|powerBooster:y}}</td>
+    </tr>
+    </table>
+
+
+
+
+      
+
+               

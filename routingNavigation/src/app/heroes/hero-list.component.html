@@ -1,0 +1,15 @@
+<table class ="table table-hover">
+    <thead>
+        <tr>
+            <th>Hero Id</th>
+            <th>Hero Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let obj of Hero" (click)="onSelect(obj)">
+            <td>{{obj.id}}</td>
+            <td>{{obj.name}}</td>
+        </tr>
+    </tbody>
+</table>
+<app-hero-detail *ngIf="obj!=undefined" [selectedHero]="obj"></app-hero-detail>

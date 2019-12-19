@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<div id="super" class="dropdown" align="right">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Admin Options
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="admin/configure">Configure Billing</a>
+          <a class="dropdown-item" routerLink="admin/allocate">Allocate Project</a>
+          <a class="dropdown-item" routerLink="admin/viewReport">View Report</a>
+        </div>
+      </div>
+
+      <style>
+     #super {
+         position: relative;
+         margin-left:10px;
+         margin-top:100px;
+
+         
+     }
+      </style>

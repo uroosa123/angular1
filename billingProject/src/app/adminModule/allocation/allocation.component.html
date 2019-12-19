@@ -1,0 +1,52 @@
+<div id="superr" class="container">
+        <form [formGroup]="allocationForm" class="form" (ngSubmit)="onAllocate()">
+                <h1 style="text-align: center;font-family: verdana;color:#000080">Allocate Here! </h1>
+            <div class="form-group">
+                <label>Project:</label>
+                <select formControlName="proObj" class="custom-select" [class.is-invalid]="proObj.invalid && proObj.touched">
+                   <option *ngFor="let pro of project" value={{pro.projectId}}>
+                        {{pro.projectName}}</option>
+                </select>
+                <small class="text-danger" [class.d-none]="proObj.valid||proObj.untouched">Name is required..</small>
+            </div>
+        
+            <div class="form-group">
+                    <label>Employees:</label>
+                    <select formControlName="empObj" class="custom-select" [class.is-invalid]="empObj.invalid && empObj.touched">
+                      <option *ngFor="let e of employees" value={{e.employeeId}}>
+                            {{e.employeeName}}
+                          </option>
+                         </select>
+                         <small class="text-danger" [class.d-none]="empObj.valid||empObj.untouched">Employeesis required..</small>
+                        </div>
+
+            <div class="form-group">
+                <label>Role:</label>
+                <select formControlName="roleObj" class="custom-select" ng-required="roleId" [class.is-invalid]="roleObj.invalid && roleObj.touched">
+                  <option *ngFor="let ro of role" value={{ro.roleId}}>
+                        {{ro.roleName}}
+                      </option>
+                     </select>
+                     <small class="text-danger" [class.d-none]="roleObj.valid||roleObj.untouched">Role is required..</small>
+                    </div>
+        
+                     <div class="form-group">
+                            <label>Location:</label>
+                            <div>
+                                    <input id="offshore" type="radio" value="Offshore" [class.is-invalid]="location.invalid && location.touched" formControlName="location" checked/>
+                                    <label for="offshore">Offshore</label>
+                                 </div>
+                              
+                                 <div>
+                                    <input id="onshore" type="radio" value="Onsite" formControlName="location">
+                                    <label for="onshore">Onsite</label>
+                                 </div>
+                                 <small class="text-danger" [class.d-none]="location.valid||location.untouched">Location is required..</small>
+                     </div>    
+                            <div align="center">
+                <button type="submit" class="btn btn-success" [disabled]="!allocationForm.valid">Submit</button>
+                </div>
+             </form>
+            </div>
+
+                    

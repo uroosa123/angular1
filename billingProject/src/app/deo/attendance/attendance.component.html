@@ -1,0 +1,144 @@
+
+<div id="superr" class="container">
+<form [formGroup]="attendanceForm" class="form" (ngSubmit)="mark()">
+
+	<h1 style="text-align: center;font-family: verdana;color:#000080">Mark Attendance Here! </h1>
+		<div class="form-group">
+        <label>Project :</label>
+
+		<select class="custom-select" formControlName="projectId" ng-required="projectId" id="project"  [class.is-invalid]="projectId.invalid && projectId.touched" (change)="projectselect($event.target.value)">
+			<option *ngFor="let pro of project" value={{pro.projectId}}>
+                {{pro.projectName}}</option>
+		</select><br>
+		<small class="text-danger" [class.d-none]="projectId.valid||projectId.untouched">Project is required..</small>
+		</div>
+
+		<div class="form-group"> 
+
+		<label>Employees Under project :</label>
+
+		<select class="custom-select" formControlName="employeeId" id="employee" [class.is-invalid]="employeeId.invalid && employeeId.touched" required="true">
+			<option *ngFor="let e of employee" value={{e.employeeId}}>
+                {{e.employeeName}}
+              </option>
+		</select><br>
+		<small class="text-danger" [class.d-none]="employeeId.valid||employeeId.untouched">Employee is required..</small>
+		</div>
+
+		<div class="form-group">
+
+		<label>Month :</label>
+
+		<select class="custom-select" formControlName="month" [class.is-invalid]="month.invalid && month.touched"  required="true">
+
+			<option value="january">January</option>
+
+			<option value="february">February</option>
+
+			<option value="march">March</option>
+
+			<option value="april">April</option>
+
+			<option value="may">May</option>
+
+			<option value="june">June</option>
+
+			<option value="july">July</option>
+
+			<option value="august">August</option>
+
+			<option value="september">September</option>
+
+			<option value="october">October</option>
+
+			<option value="november">November</option>
+
+			<option value="december">December</option>
+
+		</select>
+
+		<br>
+		<small class="text-danger" [class.d-none]="month.valid||month.untouched">Month is required..</small>
+
+		</div>
+		
+
+		<div class="form-group">
+
+            <label>Year:</label><br>
+
+			<input type="number" formControlName="year" [class.is-invalid]="year.invalid && year.touched">
+			<small class="text-danger" [class.d-none]="year.valid||year.untouched">Year is required..</small>
+
+           </div>
+
+		
+
+		<br>
+
+		<div class="form-group">
+
+		<label>Half day:</label><br>
+
+		<input type="number" class="form-control" formControlName="halfDay" max="30" placeholder="Enter Number of Half Days" [class.is-invalid]="halfDay.invalid && halfDay.touched" required="true"/><br>
+		<small class="text-danger" [class.d-none]="halfDay.valid||halfDay.untouched">Half Day is required..</small>
+		</div>
+
+		
+
+		<div class="form-group">	
+
+			<label>Full Day:</label><br>
+
+			<input type="number" class="form-control" formControlName="fullDay"max="30" placeholder="Enter Number of Full Days" [class.is-invalid]="fullDay.invalid && fullDay.touched" required="true"/><br>
+			<small class="text-danger" [class.d-none]="fullDay.valid||fullDay.untouched">Half Day is required..</small>
+		</div>
+
+		
+
+		<div class="form-group">
+
+		    <button type="submit" class="btn btn-primary">Submit</button>
+
+		 </div>
+
+	</form>
+
+	</div>
+	<!--<script type="text/javascript">
+		$('select#project').on('change', function() {
+			$("#employee").empty();
+			
+			
+			$("div#msg").html("");
+			var projectId=this.value;
+			console.log('Project Id : '+projectId);
+			$.get("getEmployeesList?projectId="+projectId, function(data, status){
+			    
+			    console.log(data.length);
+			    if(data.length!=0){
+			    console.log('I m in if');
+			    data.forEach(function(el, index) {
+			    	console.log('Hello I m in for Each..');
+			        console.log(el.employeeId+" "+el.employeeName);
+			      
+			        
+			        var o = new Option(el.employeeName, el.employeeId);
+		                 /// jquerify the DOM object 'o' so we can use the html method
+		                 $(o).html(el.employeeName);
+		                 $("#employee").append(o);
+		                
+		                 
+		                
+			      });
+			    }
+			    else {
+			    	console.log('I m in else');
+			    	$("div#msg").html("No Employee exist for the given project...");
+			    	
+			    }
+			   
+			  });
+			
+		});
+	</script>-->

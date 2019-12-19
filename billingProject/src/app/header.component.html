@@ -1,0 +1,62 @@
+
+<!--<div style="background-color:#000080">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="head">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="span8" align="left">
+                        <h1 class="muted" style="color:lightgrey;font-family:cursive;font-style:italic">PROJECT BILLING MANAGEMENT SYSTEM</h1>
+                    </div>
+                    
+                    
+    <div align="right" style="margin-top:15px;">
+    <table>
+                <tr>
+                    <td><a routerLink="/login" style="color:white"><i class="fas fa-home"></i>Login Here!</a></td>
+                </tr>
+            </table>
+    </div>
+    
+    </div>
+            </div>
+    
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">Billing Management System</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a routerLink="/admin" *ngIf="router.url==='/admin/admin/configure'||router.url==='/admin/admin/allocate'||router.url==='/admin/admin/viewReport'">Home</a></li>
+          <li class="menu-active"><a routerLink="/deo" *ngIf="router.url==='/deo/deo/markAttendance'">Home</a></li>
+          <li class="menu-active"><a routerLink="/" *ngIf="router.url==='/about'||router.url==='/login'">Home</a></li>
+          <li><a routerLink="/about" *ngIf="router.url==='/banner'||router.url==='/login'">About Us</a></li>
+          <li><a routerLink="/login" *ngIf="router.url==='/banner'">Login</a></li>
+          <li><a (click)="logout()" *ngIf="router.url==='/admin'||router.url==='/deo'">LogOut</a></li>
+         
+
+        </ul>
+      </nav><!-- #nav-menu-container -->
+      
+
+    </div>
+  </header><!-- #header -->
